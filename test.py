@@ -25,4 +25,4 @@ class TestHello(unittest.TestCase):
       self.assertIn(bytearray(f"{name}", 'utf-8'), rv.data)
 
 if __name__ == '__main__':
-  unittest.main()
+  unittest.main(argv=['first-arg-is-ignored'], exit=False)
