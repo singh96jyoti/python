@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 import unittest
+import xmlrunner #important for generating xml reports for junit testing
 import app
 
 class TestHello(unittest.TestCase):
@@ -25,4 +26,6 @@ class TestHello(unittest.TestCase):
       self.assertIn(bytearray(f"{name}", 'utf-8'), rv.data)
 
 if __name__ == '__main__':
+  unittest.main(testRunner=xmlrunner.XMLTestRunner(output='unit-test-reports')) #important for junit test to run test.py into xml file
   unittest.main()
+  
